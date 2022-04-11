@@ -230,9 +230,10 @@ GameObject:
   - component: {fileID: 269772685}
   - component: {fileID: 269772684}
   - component: {fileID: 269772683}
+  - component: {fileID: 269772686}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: CheckableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +284,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 40.506668, z: 0}
+--- !u!65 &269772686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269772682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99895215, y: 2.1351533, z: 0.18205905}
+  m_Center: {x: -0.48742032, y: -1.0827324, z: -0.025810122}
 --- !u!1 &274608128
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +529,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1359507813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 1748971447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359507818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359507813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b9b98a951fa7d4497032a22d9b3d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LinePrefab: {fileID: 1954571068389256836, guid: 6ddad69bf2430ae4291fd474038e61c9, type: 3}
 --- !u!1001 &1748971447
 PrefabInstance:
   m_ObjectHideFlags: 0
