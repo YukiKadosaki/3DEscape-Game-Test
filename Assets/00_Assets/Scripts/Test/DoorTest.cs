@@ -12,7 +12,7 @@ public class DoorTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            m_Door.OpenAndClose();
+            m_Door.OnChecked();
         }
     }
 }

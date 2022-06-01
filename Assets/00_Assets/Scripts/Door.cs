@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : CheckableObject
 {
 
     private Animator m_Animator;
     private bool m_IsClosed = true;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         m_Animator = this.GetComponent<Animator>();
     }
 
-    public void OpenAndClose()
+    public override void OnChecked()
     {
 
         //アニメーション中なら終了
@@ -23,11 +24,13 @@ public class Door : MonoBehaviour
         {
             Debug.Log("Open");
             m_Animator.Play("DoorOpen");
+            m_Message.text = "ドアを開けた";
         }
         else
         {
             Debug.Log("Close");
             m_Animator.Play("DoorClose");
+            m_Message.text = "ドアを閉めた";
         }
 
         //開閉状態は反転
