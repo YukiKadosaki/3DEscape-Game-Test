@@ -54,6 +54,9 @@ public class MenuManager : MonoBehaviour
         TryDrawMousePointer();
     }
 
+    /// <summary>
+    /// キー入力を検査してメニューの開閉をする
+    /// </summary>
     private void TryOpenAndCloseMenu()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -73,31 +76,27 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    Vector2 mouseDeltaPosition;
-    float nextMouseX;
-    float nextMouseY;
-    Vector2 newPosition;
-
+    /// <summary>
+    /// マウスポインタの座標を計算し、表示する
+    /// </summary>
     private void TryDrawMousePointer()
     {
-        /*Vector2*/ mouseDeltaPosition = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        /*float*/ nextMouseX = m_MousePointer.position.x + mouseDeltaPosition.x * m_MouseSpeed;
-        /*float*/ nextMouseY = m_MousePointer.position.y + mouseDeltaPosition.y * m_MouseSpeed;
-        /*Vector2*/ newPosition = m_MousePositionBefore;
+        Vector2 mouseDeltaPosition = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        float nextMouseX = m_MousePointer.position.x + mouseDeltaPosition.x * m_MouseSpeed;
+        float nextMouseY = m_MousePointer.position.y + mouseDeltaPosition.y * m_MouseSpeed;
+        Vector2 newPosition = m_MousePositionBefore;
 
-        //Debug.Log(nextMouseX);
-        if (-1 <= nextMouseX && nextMouseX <= canvas_width)
+        if (0 <= nextMouseX && nextMouseX <= canvas_width)
         {
             newPosition.x = nextMouseX;
         }
 
-        if(-1 <= nextMouseY && nextMouseY <= canvas_height)
+        if (0 <= nextMouseY && nextMouseY <= canvas_height)
         {
             newPosition.y = nextMouseY;
         }
         m_MousePointer.position = newPosition;
 
         m_MousePositionBefore = newPosition;
-        Debug.Log(m_MousePointer.position);
     }
 }
